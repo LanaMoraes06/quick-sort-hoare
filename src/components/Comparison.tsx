@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CirclePlay, Pause, RotateCcw } from 'lucide-react';
+import type { TraceStep } from '../lib/sorting';
 import { bubbleSortTrace, mergeSortTrace, quickSortTrace } from '../lib/sorting';
 import { SortingBars } from './SortingBars';
 
