@@ -1,0 +1,33 @@
+QUICK SORT LAB - HOARE - VERSAO SEM ERRO DO PRISM
+
+CORRECAO
+Esta versao removeu o Prism.js, origem do erro de inicializacao
+"Cannot set properties of undefined (setting 'class-name')".
+O realce de sintaxe em seis linguagens continua funcionando.
+
+ATUALIZAR O SEU PROJETO
+1) Extraia o ZIP.
+2) Abra a pasta do SEU repositorio quick-sort (aquela que contem .git).
+3) Copie TODOS os arquivos e pastas de QuickSortLab-Hoare-SemErroPrism
+   para dentro do seu repositorio, substituindo os antigos.
+4) NAO apague a pasta oculta .git.
+5) Pare o servidor Vite antigo (Ctrl + C).
+6) Execute:
+       npm install
+       npm run test:logic
+       npm run dev -- --force
+7) Abra a URL exibida no terminal. Atualize o navegador com Ctrl + Shift + R.
+
+VALIDAR A VERSAO DE PRODUCAO
+       npm run build
+       npm run preview
+
+ENVIAR PARA O GITHUB / VERCEL
+       git add .
+       git commit -m "fix: remover falha do Prism na versao Hoare"
+       git push origin main
+
+Ao receber o push, a Vercel normalmente publica a nova versao automaticamente.
+Configuracoes: Vite / Root ./ / Build npm run build / Output dist.
+
+NAO abra index.html diretamente pelo sistema de arquivos nem use Live Server.

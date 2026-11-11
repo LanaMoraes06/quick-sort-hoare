@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b12" />
+    <meta name="description" content="Domine o Quick Sort com Hoare: visualizador interativo, códigos em seis linguagens, complexidade, exercícios e caminhos para continuar estudando programação." />
+    <meta property="og:title" content="Quick Sort Lab — Divida. Conquiste. Aprenda." />
+    <meta property="og:description" content="Veja o particionamento de Hoare, seus ponteiros i/j e seis implementações completas." />
+    <title>Quick Sort Lab | Divida. Conquiste. Aprenda.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Exibe uma mensagem útil quando a aplicação não carrega, em vez de uma tela vazia.
+      (() => {
+        let ultimoErro = '';
+        function mostrarProblema() {
+          const root = document.getElementById('root');
+          if (!root || root.querySelector('.top-header')) return;
+          if (root.querySelector('#quicksort-diagnostico')) return;
+          const card = document.createElement('section');
+          card.id = 'quicksort-diagnostico';
+          card.style.cssText = 'box-sizing:border-box;max-width:780px;margin:9vh auto;padding:30px;border-radius:16px;border:1px solid #5a407f;background:#141c2c;color:#e8e5f3;font:16px/1.7 system-ui,sans-serif;box-shadow:0 25px 70px #0006';
+          const title = document.createElement('h1');
+          title.textContent = 'O Quick Sort Lab ainda não iniciou';
+          title.style.cssText = 'font-size:26px;margin:0 0 15px;color:#c7a9ff';
+          const msg = document.createElement('p');
+          msg.textContent = location.protocol === 'file:'
+            ? 'Você abriu o index.html como arquivo. Este projeto usa React e Vite, então precisa ser iniciado pelo terminal.'
+            : 'O React não conseguiu carregar. Confira o terminal onde o Vite está rodando e o console do navegador (F12 > Console).';
+          const steps = document.createElement('pre');
+          steps.style.cssText = 'white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:10px;background:#090f1c;color:#8cf2d7;font-size:13px';
+          steps.textContent = 'Dentro da pasta quicksort-lab:\nnpm install\nnpm run dev\n\nDepois abra o endereço indicado no terminal, normalmente http://localhost:5173/';
+          const error = document.createElement('p');
+          error.style.cssText = 'font-size:13px;color:#ffb4b4;overflow-wrap:anywhere';
+          error.textContent = ultimoErro ? 'Erro detectado: ' + ultimoErro : 'Se continuar em branco, abra F12 > Console e copie a mensagem em vermelho.';
+          card.append(title,msg,steps,error);
+          root.replaceChildren(card);
+        }
+        window.addEventListener('error', e => { ultimoErro = String(e.message || 'Falha ao carregar script'); });
+        window.addEventListener('unhandledrejection', e => { ultimoErro = String(e.reason?.message || e.reason || 'Promessa rejeitada'); });
+        if (location.protocol === 'file:') {
+          document.addEventListener('DOMContentLoaded', mostrarProblema, { once: true });
+        } else {
+          setTimeout(mostrarProblema, 4000);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
